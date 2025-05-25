@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>知命</title>
+<link rel="shortcut icon" href="./images/logo.png">
+<link rel="stylesheet" href="./css/swiper-bundle.css">
+<link rel="stylesheet" href="./css/index.css">
+
+<style>
+    .swiper {
+        height: 450px;
+    }
+
+    .swiper-pagination-bullet {
+        width: 20px;
+        height: 20px;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: brown;
+    }
+
+    .swiper-slide-active img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+    }
+
+ /* 页脚 */
+ footer {
+        background-color: #333; /* 页脚背景颜色 */
+        color: white; /* 文字颜色 */
+        text-align: center; /* 文字居中 */
+        padding: 10px 0; /* 上下内边距 */
+       
+        bottom: 0; /* 底部对齐 */
+        width: 100%; /* 宽度100% */
+      }
+</style>
+</head>
+
+<body>
+<!-- 导航菜单 -->
+ 
+<nav class="navbar">
+  <ul class="nav-list">
+    <li>
+      <div class="logo2">
+        <img src="./images/logo2.png" alt="Company Logo" >
+       </div>
+    </li>
+    <li class="nav-item">
+      <a href="index.html">中国古代术数</a>
+    </li>
+    <li class="nav-item">
+      <a href="#">四大分类</a>
+      <ul class="dropdown">
+        <li><a href="pan.html">盘概念</a></li>
+        <li><a href="">卦概念</a></li>
+        <li><a href="#">干支概念</a></li>
+        <li><a href="#">形式概念</a></li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a href="#">历史发展</a>
+      <ul class="dropdown">
+       <li><a href="gudai.html">古代</a></li>
+       <li><a href="#">近代</a></li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a href="#">展望未来</a>
+    </li>
+  </ul>
+</nav>
+
+<!-- 轮播图 -->
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="./images/p1.jpg" alt=""></div>
+    
+    <div class="swiper-slide"><img src="./images/p2.png" alt=""></div>
+    <div class="swiper-slide"><img src="./images/p3.jpg" alt=""></div>
+  </div>
+  <!-- 如果需要分页器 -->
+  <div class="swiper-pagination"></div>
+</div>
+
+<script src="js/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+
+<script>
+  var mySwiper = new Swiper('.swiper', {
+      loop: true, // 循环模式选项
+      autoplay: {
+          delay: 30000,
+          stopOnLastSlide: false,
+          disableOnInteraction: false,
+      },
+      // 如果需要分页器
+      pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+      },
+      navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+      },
+  })
+  //鼠标滑过pagination控制swiper切换
+  for (i = 0; i < mySwiper.pagination.bullets.length; i++) {
+      mySwiper.pagination.bullets[i].index = i
+      mySwiper.pagination.bullets[i].onmouseover = function () {
+          mySwiper.slideTo(this.index);
+      };
+  }
+  //如果你开启了clickable，还可以这样
+  for (i = 0; i < mySwiper.pagination.bullets.length; i++) {
+      mySwiper.pagination.bullets[i].onmouseover = function () {
+          this.click();
+      };
+  }
+</script>
+<h1  style="text-align: center;">相关简介</h1>
+
+
+<div class="jjimg"><img src="./images/taiji.jfif" ></div>
+<div class="relative-div">
+  <p>数术，也写作术数， [1]是中华古代神秘文化的主干内容。数术的特征是以数行方术；基础是阴阳五行、天干地支、河图洛书、太玄甲子数等。“术”，指方术；”数”，指气数、数理；即阴阳五行生克制化的数理。</p>
+  <p>古人将自然界所观察到的各种变化，与人事、政治、社会的变化结合起来，认为两者有某种内在关系，这种关系可用术数来归纳、推理。于是，术数便用来推测个人，甚至国家的命运吉凶。《黄帝内经-素问-上古天真论》：“上古之人，其知道者，法于阴阳，和于术数。”《汉书-艺文志》将天文、历谱、五行、蓍龟、杂占、形法等六方面列入术数范围。《中国方术大辞典》把凡是运用这种阴阳五行生克制化的数理以行占卜之术的，皆纳入术数范围。如：星占、卜筮、六壬、奇门遁甲、相命、拆字、起课、堪舆、择日等等。</p>
+  <p>中国古代预测方法中，其核心为六个字：阴阳、五行、干支。阴阳是吉凶的依据，五行既是阴阳的具体状态、又是作用变化，干支是阴阳五行结合的具体表示，是方位、时空与周期，其既是阴阳、五行的具体细致表示而其本身又含有丰富的象的内容，所以内容最丰富，也是占的具体演算内容，也最神秘。干支数为一个整体，加上纳音、阴阳之分，时差旺衰之象，干支成了高信息含量的数理模型。</p>
+</div>
+<footer>
+  <p>&copy; 软件2401徐子翔24120137</p>
+</footer>
+</body>
+</html>
